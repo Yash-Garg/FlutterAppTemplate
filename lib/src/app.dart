@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
-import 'screens/home.dart';
+import 'constants.dart';
+import 'screens/home/home_screen.dart';
+import 'screens/splash_screen.dart';
 
 class MainApplication extends StatelessWidget {
   const MainApplication({Key? key}) : super(key: key);
@@ -9,8 +11,12 @@ class MainApplication extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Flutter Starter',
-      home: HomePage(),
+      routes: {
+        homeRoute: (_) => HomeScreen(),
+      },
+      home: SplashScreen(),
     );
   }
 }
